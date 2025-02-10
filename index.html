@@ -6,7 +6,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/home-end.css">
+    <link rel="stylesheet" href="css/home-pseudo-end.css">
     <link rel="stylesheet" href="css/game.css">
 </head>
 <body>
@@ -22,20 +22,34 @@
             <label for="nbrOfLetters">Numbers of letters</label>
             <input id="nbrOfLetters" type="number" value="10" min="1">
         </div>
-        <button onclick="startGame()">Play</button>
+        <button id="play">Play</button>
+        <button id="playRanked">Play ranked</button>
     </div>
 
     <!-- GAME PAGE -->
     <div class="page" id="game" style="display: none"></div>
 
+    <!-- PSEUDO PAGE -->
+    <div class="page" id="pseudo" style="display: none">
+        <div>
+            <label for="pseudoInput">Pseudo</label>
+            <input id="pseudoInput">
+        </div>
+        <button id="nextButton">Next</button>
+    </div>
+
     <!-- END PAGE -->
     <div class="page" id="end" style="display: none">
         <h1 id="end-title">End</h1>
         <p id="time"></p>
+
+        <table id="leaderboard" style="display: none">
+        </table>
         <button onclick="location.replace('./')">Back to homepage</button>
     </div>
 
-    <script src="js/ui.js"></script>
-    <script src="js/game.js"></script>
+    <script type="module" src="js/ui.js"></script>
+    <script type="module" src="js/game.js"></script>
+    <script type="module" src="js/firebase.js"></script>
 </body>
 </html>

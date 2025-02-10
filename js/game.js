@@ -1,8 +1,11 @@
 /**
  * Game code
- * @author AlexEtienne
+ * @author Alex Etienne
  * @since 2025-02-07
  */
+
+// Imports
+import { endGame, nbrOfLetters, openedPage, sizeOfLetters } from "./ui.js";
 
 //#region Constants
 
@@ -26,6 +29,9 @@ const PAGE = document.querySelector("#game");
 let deltaTime = 0;
 let lastTick = 0;
 
+// Game
+let lettersRemaining = -1;
+
 // Inputs
 let actualInput = '';
 
@@ -36,6 +42,8 @@ setInterval(() => {
     // Skip if not in game
     if (openedPage !== "game") {
         return;
+    } else if (lettersRemaining < 0) {
+        lettersRemaining = nbrOfLetters;
     }
 
     // Delta-time
@@ -47,7 +55,7 @@ setInterval(() => {
     // Clear the canvas
     //CTX.clearRect(0, 0, CANVAS.width, CANVAS.height);
 
-    if (PAGE.childElementCount === 0 && nbrOfLetters > 0) {
+    if (PAGE.childElementCount === 0 && lettersRemaining > 0) {
         let letter = PAGE.appendChild(document.createElement("letter"));
         letter.innerHTML = INPUTS_LIST[Math.floor(Math.random() * INPUTS_LIST.length)];
         letter.style.left = Math.random() * 100 + "%";
@@ -56,12 +64,12 @@ setInterval(() => {
     } else {
         if (actualInput === PAGE.lastElementChild.innerHTML) {
             PAGE.innerHTML = "";
-            nbrOfLetters--;
+            lettersRemaining--;
         }
     }
 
     // Finish the game
-    if (nbrOfLetters === 0) {
+    if (lettersRemaining === 0) {
         endGame();
     }
 

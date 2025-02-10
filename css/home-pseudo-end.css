@@ -2,7 +2,7 @@
     margin-bottom: 100px;
 }
 
-#home *:not(h1, label), #end *:not(h1) {
+#home *:not(h1, label), #end *:not(h1), #pseudo *:not(label) {
     width: 400px;
     padding: 10px;
     margin: 10px 0;
@@ -12,11 +12,11 @@
     background-color: transparent;
 }
 
-#home button, #end button {
+#home button, #end button, #pseudo button {
     font-weight: bold;
     font-size: 1rem;
 }
 
-#home input {
+#home input, #pseudo input {
     max-width: 100%;
 }
