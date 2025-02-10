@@ -1,0 +1,22 @@
+#home h1, #end h1 {
+    margin-bottom: 100px;
+}
+
+#home *:not(h1, label), #end *:not(h1) {
+    width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+#home button, #end button {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#home input {
+    max-width: 100%;
+}
