@@ -6,10 +6,6 @@
     font-family: 'Inter', sans-serif;
 }
 
-body {
-    overflow: hidden;
-}
-
 a, button {
     cursor: pointer;
 }
